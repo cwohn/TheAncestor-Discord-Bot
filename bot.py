@@ -129,7 +129,7 @@ async def play(ctx, filename):
     await ensure_voice(ctx)
     source = discord.PCMVolumeTransformer(discord.FFmpegPCMAudio(filename))
     ctx.voice_client.play(source,
-                          after=lambda e: print("Player error: " e) if e else None)
+                          after=lambda e: print("Player error: ", e) if e else None)
     print(f"Now playing: {filename}")
 
 #Connect to a voice channel if not already connected
